@@ -4,11 +4,14 @@ def getAnzahlBits(zahl):
 
     basis = 2
 
+    # getMaxTeiler wurde bereits in Aufgabe 2 besrpochen
     teiler = getMaxTeiler(zahl, basis)
     anzahl = 0
 
     while teiler > 0:
 
+        # Remember: zahl//teiler kann entweder 1 oder 0 sein
+        # --> wir addieren die Anzahl der Einsen auf
         anzahl = anzahl + zahl//teiler
         zahl = zahl%teiler
 
@@ -46,8 +49,5 @@ def getMaxTeiler(zahl, basis):
 
 eingabe = int(input("Eingabe: "))
 
-print("Die duale Darstellung " + getDualZahl(eingabe) + " der Zahl ", end=" ");
-print("besteht aus " + str(getAnzahlBits(eingabe)) + " 1ern")
-
-
-
+print("Die duale Darstellung " + getDualZahl(eingabe) + " der Zahl ", end="");
+print(str(eingabe) + " besteht aus " + str(getAnzahlBits(eingabe)) + " 1ern")
